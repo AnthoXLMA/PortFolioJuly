@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gimix Collections</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  <!-- Ajoute Google Font ici -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+  <!-- Navbar sticky -->
+  <nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo logo">
+      <h1>Anthony Mania</h1>
+    </div>
+    <!-- Menu -->
+    <div class="navbar-links">
+      <%= link_to "Accueil", root_path, class: "nav-link" %>
+      <%= link_to "Galerie", galerie_path, class: "nav-link" %>
+      <%= link_to "À propos", a_propos_path, class: "nav-link" %>
+      <%= link_to "Contact", contact_path, class: "nav-link" %>
+    </div>
+  </div>
+</nav>
+
+<%= yield %>
+  <footer style="height: 200px; background-color: black; color:white;">
+    <div style="text-align: center;padding: 50px;">
+      <p>&copy; 2025 Gimix Collections. Tous droits réservés.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  .navbar {
+    width: 100%;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px 40px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: #000;
+    border-color: #000;
+  }
+
+  .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo h1::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #111;
+  transition: width 0.4s ease;
+}
+
+.logo:hover h1 {
+  transform: scale(1.05);
+}
+
+.logo:hover h1::after {
+  width: 100%;
+}
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
+
+

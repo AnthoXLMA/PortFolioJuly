@@ -1,0 +1,120 @@
+<section class="resume">
+  <!-- Diaporama -->
+  <div class="slideshow-container">
+    <%= image_tag "IMG_7140.jpg", class: "slide" %>
+    <%= image_tag "_MG_2098.JPG", class: "slide" %>
+    <%= image_tag "IMG_3271.JPG", class: "slide" %>
+    <%= image_tag "IMG_3941.JPG", class: "slide" %>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="grid-gallery">
+      <%["_MG_1955.JPG", "IMG_3500.JPG", "IMG_8350.jpg", "IMG_3941.JPG", "_MG_2270.JPG", "_MG_2321.JPG", "_MG_2247.JPG", "_MG_2248.JPG"].each do |img| %>
+      <div><%= image_tag img %></div>
+    <% end %>
+  </div>
+</section>
+
+<div style="text-align: center; margin-bottom: 20px;">
+  <div>
+    <%= link_to "Voir la Galerie", galerie_path %>
+    <%= link_to "En savoir plus", a_propos_path %>
+    <%= link_to "New York", new_york_path %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    showSlide(current); // Affiche la première slide
+    setInterval(nextSlide, 4000); // Changement toutes les 4 secondes
+  });
+</script>
+
+<style>
+  body {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 2rem;
+  }
+  .resume{
+    padding:40px;
+    bottom: 10px;
+    top:10px;
+    width:100%;
+    height:auto;
+    background-color: white;
+    color:black;
+  }
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Plein écran */
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Remplit sans déformer */
+    object-position: center; /* Centre l'image */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  .gallery-section {
+    padding: 40px;
+    background: white;
+    text-align: center;
+  }
+
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  /*  border-radius: 8px;*/
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  .grid-gallery img:hover {
+    transform: scale(1.03);
+  }
+</style>

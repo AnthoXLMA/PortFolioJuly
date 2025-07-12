@@ -1,0 +1,140 @@
+<section class="bretagne-hero">
+  <%= link_to image_tag("Bretagne/IMG_8902.jpeg", class: "hero-img"), "/streets", class: "hero-link" %>
+  <div class="hero-caption">
+    <h1>Bretagne</h1>
+    <p>Rochers, sable, sentiers, et océan</p>
+  </div>
+</section>
+
+<section class="gallery-grid">
+  <% photos = ["IMG_8751.jpeg", "IMG_8515.jpeg", "IMG_8648.jpeg", "IMG_8565.jpeg", "IMG_8578.jpeg", "IMG_8617.jpeg", "IMG_8822.jpeg", "IMG_8867.jpeg"] %>
+  <% photos.each do |photo| %>
+    <%= image_tag "Bretagne/#{photo}", class: "gallery-thumb lightbox-trigger" %>
+  <% end %>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" src="">
+</div>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .bretagne-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .hero-caption {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    max-width: 600px;
+  }
+
+  .hero-caption h1 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .hero-caption p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-thumb {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+  }
+
+  .gallery-thumb:hover {
+    transform: scale(1.02);
+  }
+
+  /* Lightbox styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("lightbox-modal");
+    const modalImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    document.querySelectorAll(".lightbox-trigger").forEach(img => {
+      img.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      });
+    });
+
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    modal.onclick = function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
+</script>
