@@ -1,5 +1,5 @@
 <section class="bretagne-hero">
-  <%= link_to image_tag("Bretagne/IMG_8902.jpeg", class: "hero-img"), "/streets", class: "hero-link" %>
+  <%= link_to image_tag("Brittany/IMG_8902.jpeg", class: "hero-img"), "/streets", class: "hero-link" %>
   <div class="hero-caption">
     <h1>Bretagne</h1>
     <p>Rochers, sable, sentiers, et océan</p>
@@ -7,9 +7,18 @@
 </section>
 
 <section class="gallery-grid">
-  <% photos = ["IMG_8751.jpeg", "IMG_8515.jpeg", "IMG_8648.jpeg", "IMG_8565.jpeg", "IMG_8578.jpeg", "IMG_8617.jpeg", "IMG_8822.jpeg", "IMG_8867.jpeg"] %>
+  <% photos = [
+    "IMG_8751.jpeg",
+    "IMG_8515.jpeg",
+    "IMG_8648.jpeg",
+    "IMG_8565.jpeg",
+    "IMG_8578.jpeg",
+    "IMG_8617.jpeg",
+    "IMG_8822.jpeg",
+    "IMG_8867.jpeg"
+    ] %>
   <% photos.each do |photo| %>
-    <%= image_tag "Bretagne/#{photo}", class: "gallery-thumb lightbox-trigger" %>
+    <%= image_tag "Brittany/#{photo}", class: "gallery-thumb lightbox-trigger" %>
   <% end %>
 </section>
 

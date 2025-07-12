@@ -1,16 +1,22 @@
 <section class="resume">
   <!-- Diaporama -->
   <div class="slideshow-container">
-    <%= image_tag "IMG_7140.jpg", class: "slide" %>
-    <%= image_tag "_MG_2098.JPG", class: "slide" %>
-    <%= image_tag "IMG_3271.JPG", class: "slide" %>
-    <%= image_tag "IMG_3941.JPG", class: "slide" %>
+    <%= image_tag "NewYork/_MG_1955 - Grande.jpeg", class: "slide" %>
+    <%= image_tag "NewYork/IMG_3271 - Grande.jpeg", class: "slide" %>
+    <%= image_tag "Brittany/IMG_9443 - Grande.jpeg", class: "slide" %>
+    <%= image_tag "Brittany/IMG_8902 - Grande.jpeg", class: "slide" %>
   </div>
 </section>
 
 <section class="gallery-section">
   <div class="grid-gallery">
-      <%["_MG_1955.JPG", "IMG_3500.JPG", "IMG_8350.jpg", "IMG_3941.JPG", "_MG_2270.JPG", "_MG_2321.JPG", "_MG_2247.JPG", "_MG_2248.JPG"].each do |img| %>
+      <%[
+        "Brittany/IMG_8565 - Grande.jpeg",
+        "NewYork/IMG_6370 - Grande.jpeg",
+        "Brittany/IMG_9544 - Grande.jpeg",
+        "NewYork/IMG_7140 - Grande.jpeg",
+        "Paris/IMG_4737 - Moyenne.jpeg"
+        ].each do |img| %>
       <div><%= image_tag img %></div>
     <% end %>
   </div>
