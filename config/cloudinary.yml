@@ -1,0 +1,12 @@
+development:
+  cloud_name: "@dqaturjpm"
+  api_key: "172867358721737"
+  api_secret: "fzKOZavzETwslxbCmAfTtrlEmPc"
+  secure: true
+
+production:
+  cloud_name: "@dqaturjpm"
+  api_key: "172867358721737"
+  api_secret: "fzKOZavzETwslxbCmAfTtrlEmPc"
+  secure: true
+
