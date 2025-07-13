@@ -4,38 +4,38 @@
     <title>Anthony Mania Photography</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  <!-- Ajoute Google Font ici -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-  <!-- Navbar sticky -->
-  <nav class="navbar">
-  <div class="navbar-container">
-    <!-- Logo -->
-    <div class="navbar-logo logo">
-      <h1>AntMan</h1>
-      <h2>Photography</h2>
-    </div>
-    <!-- Menu -->
-    <div class="navbar-links">
-      <%= link_to "Prologue", root_path, class: "nav-link" %>
-      <%= link_to "Chapters", galerie_path, class: "nav-link" %>
-      <%= link_to "Backstage", a_propos_path, class: "nav-link" %>
-      <%= link_to "Messages", contact_path, class: "nav-link" %>
-    </div>
-  </div>
-</nav>
+    <!-- Navbar sticky -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <div class="navbar-logo logo">
+          <h1>AntMan</h1>
+          <h2>Photography</h2>
+        </div>
+        <!-- Menu -->
+        <div class="navbar-links">
+          <%= link_to "Prologue", root_path, class: "nav-link" %>
+          <%= link_to "Chapters", galerie_path, class: "nav-link" %>
+          <%= link_to "Backstage", a_propos_path, class: "nav-link" %>
+          <%= link_to "Messages", contact_path, class: "nav-link" %>
+        </div>
+      </div>
+    </nav>
 
-<%= yield %>
-  <footer style="height: 200px; background-color: black; color:white;">
-    <div style="text-align: center;padding: 50px;">
-      <p>&copy; 2025 Gimix Collections. Tous droits réservés.</p>
-    </div>
-  </footer>
-</body>
+    <%= yield %>
+
+    <footer style="height: 200px; background-color: black; color:white;">
+      <div style="text-align: center;padding: 50px;">
+        <p>&copy; 2025 Gimix Collections. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
 </html>
 
 <style>
@@ -78,37 +78,37 @@
   }
 
   .nav-link:hover {
-    color: #000;
-    border-color: #000;
+    color: #8e2a50;
+    border-color: #8e2a50;
   }
 
   .logo h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #111;
-  position: relative;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
 
-.logo h1::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background-color: #111;
-  transition: width 0.4s ease;
-}
+  .logo h1::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #111;
+    transition: width 0.4s ease;
+  }
 
-.logo:hover h1 {
-  transform: scale(1.05);
-}
+  .logo:hover h1 {
+    transform: scale(1.05);
+  }
 
-.logo:hover h1::after {
-  width: 100%;
-}
+  .logo:hover h1::after {
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     .navbar-container {
@@ -123,5 +123,3 @@
     }
   }
 </style>
-
-
