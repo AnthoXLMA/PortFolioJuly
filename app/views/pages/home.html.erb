@@ -1,34 +1,31 @@
 <section class="resume">
-  <!-- Diaporama -->
   <div class="slideshow-container">
-    <%= image_tag "NewYork/_MG_1955 - Grande.jpeg", class: "slide" %>
-    <%= image_tag "NewYork/IMG_3271 - Grande.jpeg", class: "slide" %>
-    <%= image_tag "Brittany/IMG_9443 - Grande.jpeg", class: "slide" %>
-    <%= image_tag "Brittany/IMG_8902 - Grande.jpeg", class: "slide" %>
+    <%= image_tag "AntManPosterisation.jpeg", class: "slide intrigue-slide" %>
+    <div class="intrigue-overlay">
+      <div class="overlay-content">
+        <h1>
+          Think Quieter,<br>
+          <span>Listen Louder</span>
+        </h1>
+        <%= link_to "Entrez", galerie_path, class: "btn btn-large" %>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="gallery-section">
   <div class="grid-gallery">
-      <%[
-        "Brittany/IMG_8565 - Grande.jpeg",
-        "NewYork/IMG_6370 - Grande.jpeg",
-        "Brittany/IMG_9544 - Grande.jpeg",
-        "NewYork/IMG_7140 - Grande.jpeg",
-        "Paris/IMG_4737 - Moyenne.jpeg"
-        ].each do |img| %>
+    <%[
+      "Brittany/IMG_8565 - Grande.jpeg",
+      "NewYork/IMG_6370 - Grande.jpeg",
+      "Brittany/IMG_9544 - Grande.jpeg",
+      "NewYork/IMG_7140 - Grande.jpeg",
+      "Paris/IMG_4737 - Moyenne.jpeg"
+    ].each do |img| %>
       <div><%= image_tag img %></div>
     <% end %>
   </div>
 </section>
-
-<div style="text-align: center; margin-bottom: 20px;">
-  <div>
-    <%= link_to "Voir la Galerie", galerie_path %>
-    <%= link_to "En savoir plus", a_propos_path %>
-    <%= link_to "New York", new_york_path %>
-  </div>
-</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -47,52 +44,101 @@
       showSlide(current);
     }
 
-    showSlide(current); // Affiche la première slide
-    setInterval(nextSlide, 4000); // Changement toutes les 4 secondes
+    showSlide(current);
+    setInterval(nextSlide, 4000);
   });
 </script>
 
 <style>
   body {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
-  h1 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 2rem;
+
+  .resume {
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: black;
   }
-  .resume{
-    padding:40px;
-    bottom: 10px;
-    top:10px;
-    width:100%;
-    height:auto;
-    background-color: white;
-    color:black;
-  }
+
   .slideshow-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Plein écran */
+    height: 100vh;
     overflow: hidden;
   }
+
   .slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* Remplit sans déformer */
-    object-position: center; /* Centre l'image */
+    object-fit: cover;
+    object-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
   }
+
   .slide.active {
     opacity: 1;
     z-index: 1;
   }
+
+  .intrigue-slide {
+    filter: brightness(1.1) contrast(1.1) saturate(0.7);
+    transform: scale(1.05);
+    transition: transform 10s ease-in-out;
+  }
+
+  .intrigue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    pointer-events: auto;
+  }
+
+  .intrigue-overlay h1 {
+    margin: 0;
+    padding: 0 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 3s ease-in-out both;
+  }
+
+  .intrigue-overlay h1 span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+  }
+
   .gallery-section {
     padding: 40px;
     background: white;
@@ -116,11 +162,46 @@
     width: 100%;
     height: 180px;
     object-fit: cover;
-  /*  border-radius: 8px;*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
   }
+
   .grid-gallery img:hover {
     transform: scale(1.03);
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: white;
+    color: black;
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  }
+
+  .btn-large {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 </style>

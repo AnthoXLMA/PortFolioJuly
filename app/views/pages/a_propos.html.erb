@@ -1,2 +1,211 @@
-<h1>Pages#a_propos</h1>
-<p>Find me in app/views/pages/a_propos.html.erb</p>
+<section class="resume">
+  <div class="resume-container">
+    <div class="slideshow-container">
+      <%= image_tag "AntManPosterisation.jpeg", class: "slide intrigue-slide active" %>
+      <div class="intrigue-overlay">
+        <h1>Backstage</h1>
+      </div>
+    </div>
+
+    <div class="artist-description">
+      <p>
+Observateur attentif entre ombres et lumières,
+je scrute les coins de rues et le vide du ciel.
+« Think Quieter, Listen Louder » fut l’un de mes premiers slogans,
+une invitation à capter l’invisible et à entendre l’indicible.
+      </p>
+      <p>
+        L’intrigue n’est pas un effet. C’est un regard. Le mien cherche ce que l’on ne veut pas toujours voir.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    showSlide(current); // Affiche la première slide
+    setInterval(nextSlide, 4000); // Changement toutes les 4 secondes
+  });
+</script>
+
+<style>
+  body {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 2rem;
+  }
+  .resume{
+    padding:40px;
+    bottom: 10px;
+    top:10px;
+    width:100%;
+    height:auto;
+    background-color: black;
+    color:black;
+  }
+.resume-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 45%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Remplit sans déformer */
+    object-position: center; /* Centre l'image */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .artist-description {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.artist-description h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.artist-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+  .gallery-section {
+    padding: 40px;
+    background: white;
+    text-align: center;
+  }
+
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  /*  border-radius: 8px;*/
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  .grid-gallery img:hover {
+    transform: scale(1.03);
+  }
+  .intrigue-slide {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: auto;          /* Laisse la largeur automatique */
+  height: 100%;         /* Prend toute la hauteur du conteneur */
+  max-width: none;      /* Pas de limite max sur la largeur */
+  max-height: 100%;     /* Limite la hauteur au conteneur */
+  transform: translate(-50%, -50%) scale(1.05); /* Centre + zoom */
+  filter: brightness(1.2) contrast(1.1) saturate(2);
+  transition: transform 10s ease-in-out;
+  object-fit: cover;    /* Pour couvrir sans déformer */
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 10s ease-in-out;
+}
+}
+
+@keyframes zoom-slow {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.intrigue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.intrigue-overlay h1 {
+  color: white;
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  padding: 0 1rem;
+  max-width: 80%;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  animation: fadeIn 3s ease-in-out both;
+}
+
+.intrigue-overlay h1 span {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+</style>
