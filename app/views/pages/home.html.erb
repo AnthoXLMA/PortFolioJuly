@@ -1,13 +1,13 @@
 <section class="resume">
   <div class="slideshow-container">
-    <%= image_tag "AntManPosterisation.jpeg", class: "slide intrigue-slide" %>
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423739/AntManPosterisation_hrtrxd.jpg", alt: "Titre de l’image") %>
     <div class="intrigue-overlay">
       <div class="overlay-content">
         <h1>
           Think Quieter,<br>
           <span>Listen Louder</span>
         </h1>
-        <%= link_to "Entrez", galerie_path, class: "btn btn-large" %>
+        <%= link_to "Entrée", galerie_path, class: "btn btn-large" %>
       </div>
     </div>
   </div>
@@ -15,14 +15,16 @@
 
 <section class="gallery-section">
   <div class="grid-gallery">
-    <%[
-      "Brittany/IMG_8565 - Grande.jpeg",
-      "NewYork/IMG_6370 - Grande.jpeg",
-      "Brittany/IMG_9544 - Grande.jpeg",
-      "NewYork/IMG_7140 - Grande.jpeg",
-      "Paris/IMG_4737 - Moyenne.jpeg"
-    ].each do |img| %>
-      <div><%= image_tag img %></div>
+    <% [
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423660/Brittany/IMG_8565_-_Grande_vku27x.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423670/Brittany/IMG_9544_-_Grande_yfa9rs.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423697/NewYork/IMG_6370_-_Grande_bwvfwd.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423699/NewYork/IMG_7140_-_Grande_i8e0h9.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752424501/Paris/IMG_4737_-_Moyenne_e3fcx8.jpg"
+    ].each do |img_url| %>
+      <div>
+        <%= image_tag img_url, alt: "Titre de l’image" %>
+      </div>
     <% end %>
   </div>
 </section>
@@ -51,7 +53,7 @@
 
 <style>
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -173,8 +175,8 @@
   .btn {
     padding: 12px 30px;
     font-size: 1rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+/*    font-weight: 600;*/
     border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
@@ -189,9 +191,9 @@
   .btn:hover,
   .btn:focus {
     background-color: white;
-    color: black;
+    color: #8e2a50;
     outline: none;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 12px #8e2a50;
   }
 
   .btn-large {

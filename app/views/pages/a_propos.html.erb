@@ -1,26 +1,42 @@
 <section class="resume">
   <div class="resume-container">
     <div class="slideshow-container">
-      <%= image_tag "AntManPosterisation.jpeg", class: "slide intrigue-slide active" %>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423739/AntManPosterisation_hrtrxd.jpg", alt: "Titre de l’image", class: "resume-img") %>
+
       <div class="intrigue-overlay">
-        <h1>Backstage</h1>
+        <h1>BackStage</h1>
       </div>
+
     </div>
 
     <div class="artist-description">
       <p>
-Observateur attentif entre ombres et lumières,
-je scrute les coins de rues et le vide du ciel.
-« Think Quieter, Listen Louder » fut l’un de mes premiers slogans,
-une invitation à capter l’invisible et à entendre l’indicible.
-      </p>
-      <p>
-        L’intrigue n’est pas un effet. C’est un regard. Le mien cherche ce que l’on ne veut pas toujours voir.
+        Photographe autodidacte afro-européen, franco-congolais, issu de la Génération Y française, AntMan révèle depuis 2021 sa vision du monde à travers l’objectif.
+        Nourri d’influences croisées, il pose son regard dans les replis de la rue, à l’affût du détail effacé, de la finesse discrète.
+        Ses collections explorent les paysages urbains, les scènes de vie et les lieux de charme — mais ce n’est pas le voyage qui l’attire.
+        C’est l’image. Sa lumière. Sa perspective. Sa profondeur.
+
+        Des lignes feutrées d’un boudoir aux textures brutes du street art,
+        des courbes végétales aux angles nets de l’architecture,
+        AntMan poursuit une quête visuelle : celle des lignes et des courbes qui racontent, sans bruit.
+
+        Son regard se pose là où les âmes — aimantes ou cabossées — se perdent :
+        dans l’angle d’un mur, sous une ombre, sur un fragment oublié.
+        Il capte le brut, le beau, le bancal. Ce qui accroche. Ce qui échappe.
+        Ce n’est pas le lieu qui compte, mais ce que l’image retient —
+        ce qu’elle murmure, ce qu’elle laisse derrière.
+        Chaque cliché est une tension. Une respiration suspendue entre ordre et chaos.
+
+        Né d'un métissage franco-congolais, il passe son enfance en France avant de dépasser les frontières et s'arrêter au Brésil.
+        Pays où il consacre près de 20 années de sa vie.
+
+        "J'ai appris de mes voyages au Brésil que nous, Occidentaux, nous étions des sédentaires snobs qui se croyaient migrants. J'ai donné moins d'importance aux déplacements sauf pour observer ce que je voulais observer. "
+
+        En 2025, il crée les Gimix Collections et partage aujourd'hui son oeuvre sur ce site.
       </p>
     </div>
   </div>
 </section>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -55,22 +71,58 @@ une invitation à capter l’invisible et à entendre l’indicible.
     font-family: 'Playfair Display', sans-serif;
     font-size: 2rem;
   }
-  .resume{
-    padding:40px;
-    bottom: 10px;
-    top:10px;
-    width:100%;
-    height:auto;
-    background-color: black;
-    color:black;
-  }
+.resume{
+  padding:40px;
+  bottom: 10px;
+  top:10px;
+  width:100%;
+  height:auto;
+  background-color: white;
+  color:black;
+}
 .resume-container {
   display: flex;
   flex-direction: row;
+  align-items: stretch; /* ✅ Très important pour égaliser la hauteur */
   justify-content: center;
-  align-items: stretch;
   gap: 40px;
   flex-wrap: wrap;
+}
+
+.slideshow-container {
+  width: 45%;
+  display: flex;
+  align-items: stretch; /* ⚠️ assure que l’image remplit ce bloc */
+}
+
+.resume-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ⚠️ Remplit sans déformer */
+}
+
+.artist-description {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.artist-description h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.artist-description p {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 1rem;
 }
 
 .slideshow-container {
@@ -101,20 +153,29 @@ une invitation à capter l’invisible et à entendre l’indicible.
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Playfair Display', serif;
+}
+
+.artist-description h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: black;
 }
 
 .artist-description h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   margin-bottom: 16px;
-  color: white;
+  color: black;
 }
 
 .artist-description p {
-  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  text-align: justify;
   line-height: 1.6;
-  color: #ccc;
+  color: black;
   margin-bottom: 1rem;
 }
   .gallery-section {

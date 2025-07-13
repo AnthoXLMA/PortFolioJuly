@@ -2,10 +2,10 @@
   <div class="photo-row-title">Chapters</div>
 
   <div class="photo-row">
-    <%= link_to image_tag("Brittany/IMG_8867 - Grande.jpeg", class: "photo-item"), "/brittany" %>
-    <%= link_to image_tag("Brittany/IMG_8190 - Grande.jpeg", class: "photo-item"), "/brittany" %>
-    <%= link_to image_tag("NewYork/IMG_8434.jpg", class: "photo-item"), "/new_york" %>
-    <%= link_to image_tag("NewYork/_MG_1955 - Grande.jpeg", class: "photo-item"), "/new_york" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423665/Brittany/IMG_8867_-_Grande_eabumo.jpg", class: "photo-item"), "/brittany" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg", class: "photo-item"), "/brittany" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423705/NewYork/IMG_8434_-_Moyenne_k8k9rz.jpg", class: "photo-item"), "/new_york" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752426823/Paris/IMG_5145_-_Grande_omzndj.jpg", class: "photo-item"), "/new_york" %>
   </div>
 
   <!-- Nouveau menu en overlay -->
@@ -21,13 +21,13 @@
 
 <div class="container-2-3-wrapper">
   <section class="container-2">
-    <%= image_tag "NewYork/_MG_2109 - Grande.jpeg", class: "photo-item-1" %>
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2109_-_Grande_r9vrvf.jpg", class: "photo-item-1") %>
     <div class="image-caption">November Doors of Manhattan in 2025</div>
     <div class="image-caption"><%= link_to "More pictures of New York", "/new_york" %></div>
   </section>
 
   <section class="container-3">
-    <%= image_tag "NewYork/IMG_3941 - Grande.jpeg", class: "photo-item-1" %>
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423695/NewYork/IMG_3941_-_Grande_nl6phm.jpg", class: "photo-item-1") %>
     <div class="image-caption">Walk the Streets in New York City</div>
     <div class="image-caption"><%= link_to "More Black and White Pictures", "/new_york" %></div>
   </section>
@@ -35,12 +35,9 @@
 
 <section class="container-1" style="padding:10px">
   <div class="gallery-grid">
-    <%= link_to image_tag("NewYork/_MG_1955 - Grande.jpeg"), "/new_york", class: "gallery-thumb" %>
-    <%= link_to image_tag("NewYork/_MG_1955 - Grande.jpeg"), "/new_york", class: "gallery-thumb" %>
-    <%= link_to image_tag("NewYork/_MG_1955 - Grande.jpeg"), "/new_york", class: "gallery-thumb" %>
-    <%= link_to image_tag("NewYork/_MG_1955 - Grande.jpeg"), "/new_york", class: "gallery-thumb" %>
-  <%= image_tag("https://res.cloudinary.com/ton_cloud_name/image/upload/v123456789/photo.jpg", alt: "Titre de l’image") %>
-
+    <%= link_to "/new_york", class: "gallery-thumb" do %>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2110_-_Grande_rwakpv.jpg", alt: "Titre de l’image") %>
+    <% end %>
   </div>
 </section>
 
@@ -101,7 +98,7 @@
   position: absolute;
   bottom: 10px;   /* 10px du bas */
   left: 10px;     /* 10px de la gauche */
-  /*background-color: rgba(0, 0, 0, 0.6);*/
+/*  background-color: rgba(0, 0, 0, 0.6);*/
   padding: 10px 15px;
   border-radius: 6px;
   z-index: 20;  /* au-dessus des images */
@@ -126,10 +123,8 @@
 
 .photo-row-menu ul li a:hover {
   /*color: #9B496B;*/
-  color: red;
+  color: #8e2a50;
 }
-
-
 
   .photo-row-title {
     position: absolute;
