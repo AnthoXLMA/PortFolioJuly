@@ -5,7 +5,7 @@
     <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423665/Brittany/IMG_8867_-_Grande_eabumo.jpg", class: "photo-item"), "/brittany" %>
     <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg", class: "photo-item"), "/brittany" %>
     <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423705/NewYork/IMG_8434_-_Moyenne_k8k9rz.jpg", class: "photo-item"), "/new_york" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752426823/Paris/IMG_5145_-_Grande_omzndj.jpg", class: "photo-item"), "/new_york" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423690/NewYork/_MG_1957_-_Grande_iiiscf.jpg", class: "photo-item"), "/new_york" %>
   </div>
 
   <!-- Nouveau menu en overlay -->
@@ -23,23 +23,37 @@
   <section class="container-2">
     <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2109_-_Grande_r9vrvf.jpg", class: "photo-item-1") %>
     <div class="image-caption">November Doors of Manhattan in 2025</div>
-    <div class="image-caption"><%= link_to "More pictures of New York", "/new_york" %></div>
+    <div class="image-caption"><%= link_to "More 'Urban' Pictures ", "/new_york" %></div>
   </section>
 
   <section class="container-3">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423695/NewYork/IMG_3941_-_Grande_nl6phm.jpg", class: "photo-item-1") %>
-    <div class="image-caption">Walk the Streets in New York City</div>
-    <div class="image-caption"><%= link_to "More Black and White Pictures", "/new_york" %></div>
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1") %>
+    <div class="image-caption">Rosiere Lake - Courchevel 2023</div>
+    <div class="image-caption"><%= link_to "More 'Landscapes' Pictures", "/new_york" %></div>
   </section>
 </div>
 
-<section class="container-1" style="padding:10px">
+<div class="container-2-3-wrapper">
+  <section class="container-2">
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752513308/Paris/IMG_0491_kzin7n.jpg", class: "photo-item-1") %>
+    <div class="image-caption">Velvet Reverie</div>
+    <div class="image-caption"><%= link_to "More 'Reverie' Pictures ", "/new_york" %></div>
+  </section>
+
+  <section class="container-3">
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1") %>
+    <div class="image-caption">Madrugada - Paraty, Rio de Janeiro</div>
+    <div class="image-caption"><%= link_to "More 'Horizons' Pictures", "/new_york" %></div>
+  </section>
+</div>
+
+<!-- <section class="container-1" style="padding:10px">
   <div class="gallery-grid">
     <%= link_to "/new_york", class: "gallery-thumb" do %>
       <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2110_-_Grande_rwakpv.jpg", alt: "Titre de l’image") %>
     <% end %>
   </div>
-</section>
+</section> -->
 
 <style>
   body {
@@ -155,6 +169,7 @@
     width: 300px;
     height: 600px;
     object-fit: cover;
+    margin-right: 20px; /* Décalage vers la droite */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     position: relative;
@@ -207,7 +222,10 @@
     max-width: 500px;
     aspect-ratio: 5 / 4;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/*    border: 8px solid white; /* effet cadre blanc */
+    box-shadow: 0 5px 15px rgba(0.5, 0.5, 0.5, 0.5), 0 0 0 1px rgba(0,0,0,0.05); /* effet carte postale */
+    /*border-radius: 4px;*/
+    transition: transform 0.3s ease;
   }
 
   .image-caption {
