@@ -1,39 +1,35 @@
 <section class="resume">
   <div class="resume-container">
     <div class="slideshow-container">
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423739/AntManPosterisation_hrtrxd.jpg", alt: "Titre de l’image", class: "resume-img") %>
-
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423739/AntManPosterisation_hrtrxd.jpg", alt: "AntMan Posterisation HighLine NYC", class: "resume-img") %>
       <div class="intrigue-overlay">
         <h1>BackStage</h1>
       </div>
-
     </div>
+    <div class="artist-description-wrapper">
+      <div class="artist-description">
+        <p>
+          PHOTOGRAPHE AUTODIDACTE, afro-européen issu de la Génération Y, AntMan révèle depuis 2021 sa vision du monde à travers l’objectif.
+          Nourri d’influences croisées, il pose son regard dans les replis de la rue, à l’affût du détail effacé, de la finesse discrète.
+          Ses collections explorent les paysages urbains, les scènes de vie et les lieux de charme. Ce n’est pas le voyage qui l’attire.
+          C’est le souvenir de l'image rencontrée. Sa lumière. Sa perspective. Sa profondeur. Ces éléments qui nourriront la mémoire destinée à être partagée.
 
-    <div class="artist-description">
-      <p>
-        Photographe autodidacte afro-européen, franco-congolais, issu de la Génération Y française, AntMan révèle depuis 2021 sa vision du monde à travers l’objectif.
-        Nourri d’influences croisées, il pose son regard dans les replis de la rue, à l’affût du détail effacé, de la finesse discrète.
-        Ses collections explorent les paysages urbains, les scènes de vie et les lieux de charme — mais ce n’est pas le voyage qui l’attire.
-        C’est l’image. Sa lumière. Sa perspective. Sa profondeur.
+          Des lignes feutrées d’un boudoir aux textures brutes du street art,
+          des courbes végétales aux angles nets de l’architecture,
+          AntMan poursuit une quête visuelle : celle des lignes et des courbes qui racontent, sans bruit.
 
-        Des lignes feutrées d’un boudoir aux textures brutes du street art,
-        des courbes végétales aux angles nets de l’architecture,
-        AntMan poursuit une quête visuelle : celle des lignes et des courbes qui racontent, sans bruit.
+          Né d'un métissage franco-congolais, il passe son enfance en France avant de dépasser les frontières et s'arrêter au Brésil.
+          Pays où il consacre près de 20 années de sa vie.
 
-        Son regard se pose là où les âmes — aimantes ou cabossées — se perdent :
-        dans l’angle d’un mur, sous une ombre, sur un fragment oublié.
-        Il capte le brut, le beau, le bancal. Ce qui accroche. Ce qui échappe.
-        Ce n’est pas le lieu qui compte, mais ce que l’image retient —
-        ce qu’elle murmure, ce qu’elle laisse derrière.
-        Chaque cliché est une tension. Une respiration suspendue entre ordre et chaos.
+          "J'ai appris de mes voyages que nous, Occidentaux, nous sommes des sédentaires qui 'jouent' les migrants. Mais que nous manquons de donner de la valeur à la rencontre et surtout que nous nous perdons dans l'immensité des perceptions de l'instant. J'ai donné moins d'importance aux déplacements sauf pour observer ce que je voulais observer. C'est pourquoi j'ai choisi pour mieux en profiter de capturer ses angles de vues afin de les garder proches de moi."
 
-        Né d'un métissage franco-congolais, il passe son enfance en France avant de dépasser les frontières et s'arrêter au Brésil.
-        Pays où il consacre près de 20 années de sa vie.
-
-        "J'ai appris de mes voyages au Brésil que nous, Occidentaux, nous étions des sédentaires snobs qui se croyaient migrants. J'ai donné moins d'importance aux déplacements sauf pour observer ce que je voulais observer. "
-
-        En 2025, il crée les Gimix Collections et partage aujourd'hui son oeuvre sur ce site.
-      </p>
+          En 2025, AntMan crée ses premières "Gimix Collections" et présente sur ce site.
+        </p>
+        <p>
+          LE CONCEPT DE GIMIX COLLECTIONS
+          est de capturer des perspectives, des angles de vues, des dégradés de lumière.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -62,173 +58,42 @@
 
 <style>
   body {
-    font-family: 'Lato';
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  h1 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 2rem;
-  }
-.resume{
-  padding:40px;
-  bottom: 10px;
-  top:10px;
-  width:100%;
-  height:auto;
-  background-color: white;
-  color:black;
+  font-family: 'Lato';
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+}
+
+.resume {
+  padding: 40px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
 .resume-container {
   display: flex;
-  flex-direction: row;
-  align-items: stretch; /* ✅ Très important pour égaliser la hauteur */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;
 }
 
 .slideshow-container {
   width: 45%;
-  display: flex;
-  align-items: stretch; /* ⚠️ assure que l’image remplit ce bloc */
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ⚠️ Remplit sans déformer */
-}
-
-.artist-description {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-}
-
-.artist-description h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 16px;
-  color: black;
-}
-
-.artist-description p {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.9rem;
-  text-align: justify;
-  line-height: 1.6;
-  color: black;
-  margin-bottom: 1rem;
-}
-
-.slideshow-container {
-  position: relative;
-  width: 45%;
-  height: 60vh;
-  overflow: hidden;
-}
-
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* Remplit sans déformer */
-    object-position: center; /* Centre l'image */
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-  }
-  .slide.active {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  .artist-description {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-}
-
-.artist-description h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 16px;
-  color: black;
-}
-
-.artist-description h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 16px;
-  color: black;
-}
-
-.artist-description p {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.9rem;
-  text-align: justify;
-  line-height: 1.6;
-  color: black;
-  margin-bottom: 1rem;
-}
-  .gallery-section {
-    padding: 40px;
-    background: white;
-    text-align: center;
-  }
-
-  .gallery-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-
-  .grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .grid-gallery img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  /*  border-radius: 8px;*/
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-  }
-  .grid-gallery img:hover {
-    transform: scale(1.03);
-  }
-  .intrigue-slide {
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  width: auto;          /* Laisse la largeur automatique */
-  height: 100%;         /* Prend toute la hauteur du conteneur */
-  max-width: none;      /* Pas de limite max sur la largeur */
-  max-height: 100%;     /* Limite la hauteur au conteneur */
-  transform: translate(-50%, -50%) scale(1.05); /* Centre + zoom */
-  filter: brightness(1.2) contrast(1.1) saturate(2);
-  transition: transform 10s ease-in-out;
-  object-fit: cover;    /* Pour couvrir sans déformer */
-  object-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 10s ease-in-out;
-}
-}
-
-@keyframes zoom-slow {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  object-fit: cover;
 }
 
 .intrigue-overlay {
@@ -250,18 +115,9 @@
   color: white;
   font-size: 2.2rem;
   font-family: 'Playfair Display', serif;
-  line-height: 1.6;
-  padding: 0 1rem;
-  max-width: 80%;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
   animation: fadeIn 3s ease-in-out both;
-}
-
-.intrigue-overlay h1 span {
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.4rem;
 }
 
 @keyframes fadeIn {
@@ -269,4 +125,32 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.artist-description-wrapper {
+  position: relative;
+  width: 45%;
+  overflow: hidden;
+}
+
+.artist-description {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9); /* blanc semi-transparent */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Playfair Display', serif;
+  background-image: url("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423739/samples/GimixVisualArtCollections_atve5f.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-blend-mode: lighten;
+  opacity: 0.95;
+}
+
+.artist-description p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: black;
+}
 </style>
