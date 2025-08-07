@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Anthony Mania Photography</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+<head>
+  <title>AntMan Photography</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
 
   <body>
     <!-- Navbar sticky -->
@@ -15,26 +25,35 @@
       <div class="navbar-container">
         <!-- Logo -->
         <div class="navbar-logo logo">
-          <h1>AntMan</h1>
-          <h2>Photography</h2>
+          <h1>Ant<span class="man-highlight">Man</span></h1>
+          <h2>Presents Gimix Collections</h2>
         </div>
         <!-- Menu -->
         <div class="navbar-links">
           <%= link_to "Prologue", root_path, class: "nav-link" %>
-          <%= link_to "Chapters", galerie_path, class: "nav-link" %>
+          <%= link_to "Collections", collections_path, class: "nav-link" %>
+          <%= link_to "Fragments", fragments_path, class: "nav-link" %>
           <%= link_to "Backstage", a_propos_path, class: "nav-link" %>
-          <%= link_to "Messages", contact_path, class: "nav-link" %>
+          <%= link_to "Contact", contact_path, class: "nav-link" %>
         </div>
       </div>
     </nav>
 
     <%= yield %>
 
-    <footer style="height: 200px; background-color: black; color:white;">
-      <div style="text-align: center;padding: 50px;">
-        <p>&copy; 2025 Gimix Collections. Tous droits réservés.</p>
-      </div>
-    </footer>
+  <footer class="site-footer">
+  <div class="container">
+    <p>Anthony Mania Gimix Collections</p>
+    <p>&copy; 2025 Tous droits réservés.</p>
+    <nav>
+      <%= link_to "Contact", contact_path %> |
+      <a href="https://instagram.com/ant_in_thecity" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://facebook.com/tonprofil" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </nav>
+  </div>
+</footer>
+
+
   </body>
 </html>
 
@@ -102,13 +121,52 @@
     transition: width 0.4s ease;
   }
 
-  .logo:hover h1 {
+/*  .logo:hover h1 {
     transform: scale(1.05);
   }
 
   .logo:hover h1::after {
     width: 100%;
+  }*/
+
+  .man-highlight {
+  color: #8e2a50; /* Rouge bordeaux */
+  text-decoration: none; /* Pas de soulignement */
   }
+
+  .logo:hover h1 .man-highlight {
+    text-decoration: none; /* Supprime le soulignement au survol */
+  }
+
+
+  .site-footer {
+  background-color: black;
+  color: white;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 1rem;
+}
+
+.site-footer .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-footer nav a {
+  color: #8e2a50;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.site-footer nav a:hover {
+  color: #c45a7a;
+}
+
 
   @media (max-width: 768px) {
     .navbar-container {

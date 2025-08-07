@@ -1,0 +1,52 @@
+<section class="container-1" style="padding:10px;">
+  <h1>Interiors</h1>
+  <a>Un verre de vin?</a>
+  <div class="gallery-grid">
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752443538/NewYork/IMG_3500_-_Grande_2_lugz09.jpg"), "/lifestyles", class: "gallery-thumb" %>
+  </div>
+</section>
+
+<style>
+  h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumb:hover {
+  transform: scale(1.03);
+}
+</style>

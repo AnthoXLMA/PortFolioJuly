@@ -1,0 +1,477 @@
+<header class="page-header">
+  <h1>Fragments in Random</h1>
+</header>
+
+<section class="gallery-section">
+  <div class="grid-gallery">
+    <% [
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423660/Brittany/IMG_8565_-_Grande_vku27x.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752672208/Brittany/IMG_8867_-_Grande_esfl2c.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423670/Brittany/IMG_9544_-_Grande_yfa9rs.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557880/NewYork/IMG_6370_-_Grande_jntcna.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557504/NewYork/IMG_3943_-_Grande_ohbdrz.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752424501/Paris/IMG_4737_-_Moyenne_e3fcx8.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752672550/Brittany/IMG_8902_-_Grande_ui6nu7.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752671072/Brittany/IMG_8751_-_Grande_jj2rzv.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557528/NewYork/IMG_3635_-_Grande_2_cbq7qt.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754558092/NewYork/IMG_7140_-_Grande_il8xgv.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754558212/Brittany/IMG_8570_-_Grande_zkt5ls.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557409/NewYork/IMG_3911_-_Grande_ljrvjd.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557494/NewYork/IMG_3908_-_Grande_rxdnqt.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752512082/Snow/IMG_4447_qii2ul.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752510561/Brittany/IMG_9291_-_Grande_ume04y.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754507830/NewYork/IMG_4369_-_Grande_wm3ioq.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752529813/Brasil/IMG_9114_-_Grande_t2o2c1.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763233/20250717_imports/IMG_9788_-_Grande_wmlozs.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763231/20250717_imports/IMG_9782_-_Grande_lrnwxx.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763228/20250717_imports/IMG_9780_-_Grande_n9wplg.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763227/20250717_imports/IMG_9774_-_Grande_ffudoo.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763223/20250717_imports/IMG_9773_-_Grande_glzxec.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763221/20250717_imports/IMG_9766_-_Grande_mmbdtc.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763218/20250717_imports/IMG_9763_-_Grande_uyzj54.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763218/20250717_imports/IMG_9677_-_Grande_dkxdsq.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763215/20250717_imports/IMG_9731_-_Grande_aorjy0.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763216/20250717_imports/IMG_9758_-_Grande_adeci5.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763214/20250717_imports/IMG_9759_-_Grande_hm7opn.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763197/20250717_imports/IMG_9648_-_Grande_oksj4j.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763200/20250717_imports/IMG_9650_-_Grande_smbn0s.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763190/20250717_imports/IMG_9644_-_Grande_ybq4kt.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752763186/20250717_imports/IMG_9580_-_Grande_ofrogk.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752764186/20250717_imports/IMG_9516_-_Grande_zlofu5.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752764186/20250717_imports/IMG_9520_-_Grande_nkxgoi.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752767801/Paris/IMG_5418_-_Grande_qvi3cw.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752767811/Paris/IMG_5144_-_Grande_ogstwo.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752767768/Paris/IMG_5618_-_Grande_djihyg.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557497/NewYork/IMG_3237_-_Grande_gyioif.jpg"
+    ].shuffle.each do |img_url| %>
+      <div class="image-wrapper">
+        <%= image_tag img_url, alt: "Image de la galerie", class: "gallery-thumb" %>
+        <div class="image-popup">
+          <img src="<%= img_url %>" alt="Aperçu moyen">
+        </div>
+        <button class="like-btn" aria-label="Like this photo">
+          <span class="heart">♡</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".grid-gallery");
+  const images = Array.from(container.children);
+
+  function shuffleWithoutAdjacentDuplicates(array) {
+    let shuffled = array.slice();
+    let tries = 0;
+    do {
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      let hasDuplicates = false;
+      for (let k = 0; k < shuffled.length - 1; k++) {
+        if (
+          shuffled[k].querySelector('img').src ===
+          shuffled[k + 1].querySelector('img').src
+        ) {
+          hasDuplicates = true;
+          break;
+        }
+      }
+      tries++;
+    } while (hasDuplicates && tries < 10);
+    return shuffled;
+  }
+
+  // Shuffle et insère les images avant d'attacher les événements
+  const shuffledImages = shuffleWithoutAdjacentDuplicates(images);
+  container.innerHTML = "";
+  shuffledImages.forEach(img => container.appendChild(img));
+
+  // Bouton "like"
+  container.querySelectorAll(".like-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      btn.classList.toggle("liked");
+    });
+  });
+
+  // Création de la popup hover dynamique
+  const popup = document.createElement("div");
+  popup.className = "image-popup-hover";
+  popup.style.display = "none";
+  popup.style.position = "fixed";
+  popup.style.zIndex = "2000";
+  popup.style.background = "white";
+  popup.style.border = "1px solid #ccc";
+  popup.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
+  popup.style.padding = "6px";
+  popup.style.maxWidth = "400px";
+  popup.style.maxHeight = "80vh";
+  popup.style.overflow = "hidden";
+  document.body.appendChild(popup);
+
+  container.querySelectorAll(".gallery-thumb").forEach(img => {
+    img.addEventListener("mouseenter", () => {
+      popup.innerHTML = `<img src="${img.src}" style="width:100%; height:auto; max-height:80vh; object-fit: contain; display:block;" alt="Aperçu">`;
+      popup.style.display = "block";
+    });
+
+    img.addEventListener("mousemove", (e) => {
+      const offsetX = 20;
+      const offsetY = 20;
+      const popupWidth = popup.offsetWidth;
+      const popupHeight = popup.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      let left = e.clientX + offsetX;
+      let top = e.clientY + offsetY;
+
+      if (left + popupWidth > viewportWidth) {
+        left = e.clientX - popupWidth - offsetX;
+      }
+
+      if (top + popupHeight > viewportHeight) {
+        top = e.clientY - popupHeight - offsetY;
+      }
+
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      popup.style.display = "none";
+    });
+  });
+});
+</script>
+
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .resume {
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: black;
+  }
+
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .intrigue-slide {
+    filter: brightness(1.1) contrast(1.1) saturate(0.7);
+    transform: scale(1.05);
+    transition: transform 10s ease-in-out;
+  }
+
+  .intrigue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    pointer-events: auto;
+  }
+
+  .intrigue-overlay h1 {
+    margin: 0;
+    padding: 0 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 3s ease-in-out both;
+  }
+
+  .intrigue-overlay h1 span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .gallery-section {
+    padding: 40px;
+    background: white;
+    text-align: center;
+  }
+
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+    .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+  }
+
+
+  .grid-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-gallery img:hover {
+    transform: scale(1.03);
+  }
+
+.image-popup {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  width: 420px;
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 1000;
+}
+
+.image-popup img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+/* Afficher la popup uniquement au survol */
+.image-wrapper:hover .image-popup {
+  display: block;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50% 50%;
+}
+
+.image-popup-hover {
+  position: fixed;
+  z-index: 2000;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 6px;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-popup-hover img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background: black;
+}
+
+.image-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 66.66%; /* Ratio 3:2 par défaut (paysage) */
+}
+
+.image-wrapper.portrait::before {
+  padding-top: 150%; /* Pour portrait (~2:3) */
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glightbox-watermark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.9); /* plus visible */
+  background-color: rgba(0, 0, 0, 0.5); /* fond noir semi-transparent */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+}
+
+/* Bouton Like */
+.like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.like-btn .heart {
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  transition: color 0.3s ease;
+}
+
+.like-btn.liked .heart {
+  color: #ff0066; /* rose fluo violet */
+  text-shadow: 0 0 8px #ff66aa;
+}
+
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+/*    font-weight: 600;*/
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: white;
+    color: #8e2a50;
+    outline: none;
+    box-shadow: 0 0 12px #8e2a50;
+  }
+
+  .btn-large {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+
+.page-header {
+  padding: 40px 20px 20px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  background-image: url("https://res.cloudinary.com/dqaturjpm/image/upload/v1754557880/NewYork/IMG_6370_-_Grande_jntcna.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -60px 60px -20px rgba(0,0,0,0.7); /* overlay sombre en bas */
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* overlay sombre général */
+  z-index: 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1; /* pour être au-dessus de l'overlay */
+}
+
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>

@@ -1,8 +1,13 @@
 class PagesController < ApplicationController
+
+  # Controller des Menus
   def home
   end
 
-  def galerie
+  def collections
+  end
+
+  def fragments
   end
 
   def a_propos
@@ -11,15 +16,30 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def new_york
+  # Controller des Gimix Collections
+  def silenthorizons
   end
 
-  def streets
+  def willow_and_stone
   end
 
-  def landscapes
+  def metropolitan
   end
 
-  def charmes
+  def velvetreverie
   end
+
+  # Controller des Collections Globales
+  def spirituals
+  end
+
+  def lifestyles
+  end
+
+  def interiors
+  end
+
+  def commercials
+  end
+
 end

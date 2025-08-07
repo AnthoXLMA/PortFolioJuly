@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
 
-  root "pages#home"  # <- la page d’accueil va pointer vers pages#home
-  get "/galerie", to: "pages#galerie"
+  # / Menu
+  root "pages#home"
+  get "/collections", to: "pages#collections"
+  get "/fragments", to: "pages#fragments"
   get "/a-propos", to: "pages#a_propos"
   get "/contact", to: "pages#contact"
-  get "/new_york", to: "pages#new_york"
-  get "/landscapes", to: "pages#landscapes"
-  get "/streets", to: "pages#streets"
-  get "/charmes", to: "pages#charmes"
 
+  # / Gimix Collections
+  get "/silenthorizons", to: "pages#silenthorizons"
+  get "/willow_and_stone", to: "pages#willow_and_stone"
+  get "/metropolitan", to: "pages#metropolitan"
+  get "/velvetreverie", to: "pages#velvetreverie"
+
+  # / Collections Globales
+  get "/spirituals", to: "pages#spirituals"
+  get "/lifestyles", to: "pages#lifestyles"
+  get "/interiors", to: "pages#interiors"
+  get "/commercials", to: "pages#commercials"
 end
 
 
