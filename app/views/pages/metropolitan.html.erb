@@ -1,0 +1,378 @@
+<header class="page-header">
+  <h1>Metropolitan</h1>
+</header>
+
+<section class="gallery-section">
+  <div class="grid-gallery">
+    <% [
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557496/NewYork/IMG_3500_-_Grande_oajgw7.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754554095/NewYork/IMG_8434_-_Moyenne_ocb3iu.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754560681/NewYork/IMG_6944_-_Moyenne_wbojnn.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557880/NewYork/IMG_6370_-_Grande_jntcna.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557523/NewYork/_MG_2110_-_Grande_po53rx.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754555117/NewYork/IMG_3635_-_Grande_2_mmuikd.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557524/NewYork/IMG_3560_-_Grande_ug8wru.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557504/NewYork/IMG_3943_-_Grande_ohbdrz.jpg"
+  ].each do |img_url| %>
+      <div class="image-wrapper">
+        <a href="<%= img_url %>" class="glightbox" data-gallery="gallery1">
+          <%= image_tag img_url, alt: "Titre de l’image" %>
+        </a>
+        <button class="like-btn" aria-label="Like this photo">
+          <span class="heart">♡</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    loop: true,
+    touchNavigation: true,
+    keyboardNavigation: true,
+    closeButton: true,
+  });
+
+  function addWatermark() {
+  const slideMedias = document.querySelectorAll('.gslide-media');
+  slideMedias.forEach((slideMedia) => {
+    if (!slideMedia.querySelector('.glightbox-watermark')) {
+      const watermark = document.createElement('div');
+      watermark.className = 'glightbox-watermark';
+      watermark.textContent = '©ANTMAN - GimixCollections';
+      slideMedia.appendChild(watermark);
+    }
+  });
+}
+
+  const observer = new MutationObserver(() => {
+    addWatermark();
+  });
+
+  lightbox.on('open', () => {
+    const slideContainer = document.querySelector('.glightbox-container');
+    if (slideContainer) {
+      observer.observe(slideContainer, {
+        childList: true,
+        subtree: true
+      });
+    }
+    setTimeout(addWatermark, 100);
+  });
+
+  lightbox.on('slide_changed', () => {
+    setTimeout(addWatermark, 50);
+  });
+
+  document.querySelectorAll(".like-btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      btn.classList.toggle("liked");
+    });
+  });
+
+  // Shuffle logique ici (inchangée)
+  const container = document.querySelector(".grid-gallery");
+  const images = Array.from(container.children);
+
+  function shuffleWithoutAdjacentDuplicates(array) {
+    let shuffled = array.slice();
+    let tries = 0;
+
+    do {
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      let hasDuplicates = false;
+      for (let k = 0; k < shuffled.length - 1; k++) {
+        if (shuffled[k].querySelector('img').src === shuffled[k + 1].querySelector('img').src) {
+          hasDuplicates = true;
+          break;
+        }
+      }
+
+      tries++;
+    } while (hasDuplicates && tries < 10);
+
+    return shuffled;
+  }
+
+  const shuffledImages = shuffleWithoutAdjacentDuplicates(images);
+  container.innerHTML = "";
+  shuffledImages.forEach(img => container.appendChild(img));
+});
+</script>
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .resume {
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: black;
+  }
+
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .intrigue-slide {
+    filter: brightness(1.1) contrast(1.1) saturate(0.7);
+    transform: scale(1.05);
+    transition: transform 10s ease-in-out;
+  }
+
+  .intrigue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    pointer-events: auto;
+  }
+
+  .intrigue-overlay h1 {
+    margin: 0;
+    padding: 0 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 3s ease-in-out both;
+  }
+
+  .intrigue-overlay h1 span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .gallery-section {
+    padding: 40px;
+    background: white;
+    text-align: center;
+  }
+
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+    .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+
+  .grid-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-gallery img:hover {
+    transform: scale(1.03);
+  }
+
+  .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 180px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Agrandissement au survol */
+.image-wrapper:hover img {
+  object-fit: contain;
+  object-position: center;
+  background: black;
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.glightbox-watermark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.9); /* plus visible */
+  background-color: rgba(0, 0, 0, 0.5); /* fond noir semi-transparent */
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+}
+
+/* Bouton Like */
+.like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.like-btn .heart {
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  transition: color 0.3s ease;
+}
+
+.like-btn.liked .heart {
+  color: #ff0066; /* rose fluo violet */
+  text-shadow: 0 0 8px #ff66aa;
+}
+
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+/*    font-weight: 600;*/
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: white;
+    color: #8e2a50;
+    outline: none;
+    box-shadow: 0 0 12px #8e2a50;
+  }
+
+  .btn-large {
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+
+.page-header {
+  padding: 160px 30px 60px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  background-image: url("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423697/NewYork/IMG_3911_-_Grande_kznsd7.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -80px 100px -20px rgba(0, 0, 0, 0.7);
+  isolation: isolate;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* bord bas en biais */
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+  z-index: -1;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+}
+
+
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>

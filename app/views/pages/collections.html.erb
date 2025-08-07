@@ -1,35 +1,51 @@
 <section class="photo-row-container">
-  <div class="photo-row-title">Chapters</div>
+  <div class="photo-row-title">Collections</div>
 
   <div class="photo-row">
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423665/Brittany/IMG_8867_-_Grande_eabumo.jpg", class: "photo-item"), "/brittany" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752672208/Brittany/IMG_8867_-_Grande_esfl2c.jpg", class: "photo-item"), "/brittany" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754507830/NewYork/IMG_4369_-_Grande_wm3ioq.jpg", class: "photo-item"), "/new_york" %>
     <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg", class: "photo-item"), "/brittany" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423705/NewYork/IMG_8434_-_Moyenne_k8k9rz.jpg", class: "photo-item"), "/new_york" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423690/NewYork/_MG_1957_-_Grande_iiiscf.jpg", class: "photo-item"), "/new_york" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754553768/NewYork/_MG_1957_-_Grande_m55stb.jpg", class: "photo-item"), "/new_york" %>
+    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754554095/NewYork/IMG_8434_-_Moyenne_ocb3iu.jpg", class: "photo-item"), "/new_york" %>
   </div>
 
   <!-- Nouveau menu en overlay -->
   <nav class="photo-row-menu">
     <ul>
-      <li><%= link_to "Silent Horizons", "/terres_silencieuses" %></li>
-      <li><%= link_to "Willow & Stone", "/countrysiders" %></li>
-      <li><%= link_to "Metropolitan", "/citylives" %></li>
-      <li><%= link_to "Velvet Reverie", "/magenta" %></li>
+      <li><%= link_to "Silent Horizons", "/silenthorizons" %></li>
+      <li><%= link_to "Willow & Stone", "/willow_and_stone" %></li>
+      <li><%= link_to "Metropolitan", "/metropolitan" %></li>
+      <li><%= link_to "Velvet Reverie", "/velvetreverie" %></li>
     </ul>
   </nav>
 </section>
 
+<div class="swiper mySwiper-3D">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754554504/NewYork/_MG_2109_-_Grande_ozqspd.jpg", class: "photo-item-1") %>
+</div>
+    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1") %>
+</div>
+    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754555117/NewYork/IMG_3635_-_Grande_2_mmuikd.jpg", class: "photo-item-1") %></div>
+    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1") %>
+</div>
+    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752513308/Paris/IMG_0491_kzin7n.jpg", class: "photo-item-1") %>
+</div>
+  </div>
+</div>
+
+
 <div class="container-2-3-wrapper">
   <section class="container-2">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2109_-_Grande_r9vrvf.jpg", class: "photo-item-1") %>
-    <div class="image-caption">November Doors of Manhattan in 2025</div>
-    <div class="image-caption"><%= link_to "More 'Urban' Pictures ", "/new_york" %></div>
+    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754555301/NewYork/_MG_2110_-_Grande_owa2hi.jpg", class: "photo-item-1") %>
+    <div class="image-caption">Brooklyn Street</div>
+    <div class="image-caption"><%= link_to "More 'Lifestyles' Pictures ", "/lifestyles" %></div>
   </section>
 
   <section class="container-3">
     <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1") %>
     <div class="image-caption">Rosiere Lake - Courchevel 2023</div>
-    <div class="image-caption"><%= link_to "More 'Landscapes' Pictures", "/new_york" %></div>
+    <div class="image-caption"><%= link_to "More 'Indoors' Pictures", "/interiors" %></div>
   </section>
 </div>
 
@@ -37,13 +53,13 @@
   <section class="container-2">
     <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752513308/Paris/IMG_0491_kzin7n.jpg", class: "photo-item-1") %>
     <div class="image-caption">Velvet Reverie</div>
-    <div class="image-caption"><%= link_to "More 'Reverie' Pictures ", "/new_york" %></div>
+    <div class="image-caption"><%= link_to "More 'Commercials' Pictures ", "/commercials" %></div>
   </section>
 
   <section class="container-3">
     <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1") %>
     <div class="image-caption">Madrugada - Paraty, Rio de Janeiro</div>
-    <div class="image-caption"><%= link_to "More 'Horizons' Pictures", "/new_york" %></div>
+    <div class="image-caption"><%= link_to "More 'Spirituals' Pictures", "/spirituals" %></div>
   </section>
 </div>
 
@@ -55,9 +71,29 @@
   </div>
 </section> -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper-3D", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: true,
+      coverflowEffect: {
+        rotate: 40,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+    });
+  });
+</script>
+
+
 <style>
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -65,7 +101,7 @@
   }
 
   h1 {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 20px;
@@ -107,38 +143,40 @@
     margin-bottom: 70px;
   }
 
-/* Menu en bas à gauche sur le bloc */
-.photo-row-menu {
-  position: absolute;
-  bottom: 10px;   /* 10px du bas */
-  left: 10px;     /* 10px de la gauche */
-/*  background-color: rgba(0, 0, 0, 0.6);*/
-  padding: 10px 15px;
-  border-radius: 6px;
-  z-index: 20;  /* au-dessus des images */
-}
+  /* Menu en bas à gauche sur le bloc */
+  .photo-row-menu {
+    position: absolute;
+    bottom: 10px;   /* 10px du bas */
+    left: 10px;     /* 10px de la gauche */
+  /*  background-color: rgba(0, 0, 0, 0.6);*/
+    padding: 10px 15px;
+    border-radius: 6px;
+    z-index: 20;  /* au-dessus des images */
+  }
 
-.photo-row-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-}
+  .photo-row-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
 
-.photo-row-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  /*font-weight: 600;*/
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
+  .photo-row-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    /*font-weight: 600;*/
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+  }
 
-.photo-row-menu ul li a:hover {
-  /*color: #9B496B;*/
-  color: #8e2a50;
-}
+  .photo-row-menu ul li a:hover {
+    /*color: #9B496B;*/
+    /*color: #8e2a50;*/
+   /* color: #FF00FF;*/
+    color:#A1866F;
+  }
 
   .photo-row-title {
     position: absolute;
@@ -167,7 +205,7 @@
   .photo-item {
     flex-shrink: 0;
     width: 300px;
-    height: 600px;
+    height: 500px;
     object-fit: cover;
     margin-right: 20px; /* Décalage vers la droite */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -238,6 +276,35 @@
     text-align: center;
   }
 
+  .swiper.mySwiper-3D {
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+
+/*
   @media (max-width: 900px) {
     .photo-item-1 {
       width: 90%;
@@ -261,7 +328,7 @@
       width: 45%;
       height: auto;
       aspect-ratio: 2 / 5;
-      animation: none; /* désactive animation si tu en avais avant */
+      animation: none;  désactive animation si tu en avais avant
     }
 
     .photo-row-title {
@@ -271,7 +338,6 @@
     }
 
     .container-2-3-wrapper {
-      flex-direction: column;
       margin: 20px 10px 50px;
     }
 
@@ -285,5 +351,5 @@
       width: 90% !important;
       text-align: center !important;
     }
-  }
+  }*/
 </style>
