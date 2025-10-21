@@ -285,10 +285,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activestorage
   activestorage-cloudinary-service
   bootsnap
   capybara
-  cloudinary
+  cloudinary (~> 2.0)
   cssbundling-rails
   debug
   dotenv-rails
