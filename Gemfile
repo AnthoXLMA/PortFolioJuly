@@ -31,6 +31,7 @@ gem "jbuilder"
 
 gem 'cloudinary'
 gem 'activestorage-cloudinary-service' # si tu utilises ActiveStorage
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 # Use Redis adapter to run Action Cable in production
