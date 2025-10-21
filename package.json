@@ -12,6 +12,7 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.16",
     "@tailwindcss/cli": "^4.1.8",
+    "firebase": "^12.4.0",
     "glightbox": "^3.3.1",
     "tailwindcss": "^4.1.8"
   }
