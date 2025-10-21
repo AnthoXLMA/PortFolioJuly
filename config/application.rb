@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module GPortfolio
   class Application < Rails::Application
+
+    Rails.application.configure do
+      config.require_master_key = false
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -25,3 +29,4 @@ module GPortfolio
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
