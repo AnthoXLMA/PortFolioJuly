@@ -10,7 +10,7 @@ require "action_cable/engine"
 require "active_model/railtie"
 require "sprockets/railtie"
 # require "active_record/railtie" # pas de DB
-# require "active_storage/engine" # pas de fichiers à gérer
+require "active_storage/engine" # pas de fichiers à gérer
 # require "rails/test_unit/railtie" # pas de TestUnit
 
 
