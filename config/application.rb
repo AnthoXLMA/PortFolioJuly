@@ -13,6 +13,7 @@ require "sprockets/railtie"
 # require "active_storage/engine" # pas de fichiers à gérer
 # require "rails/test_unit/railtie" # pas de TestUnit
 
+
 # Charger les gems du Gemfile
 Bundler.require(*Rails.groups)
 
