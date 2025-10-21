@@ -7,6 +7,8 @@ require "action_view/railtie"
 require "action_mailer/railtie"
 require "active_job/railtie"
 require "action_cable/engine"
+require "active_storage/engine"
+
 # require "rails/test_unit/railtie" # si tu n'utilises pas TestUnit
 
 # Require the gems listed in Gemfile, including any gems

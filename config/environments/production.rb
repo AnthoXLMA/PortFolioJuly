@@ -25,6 +25,8 @@ Rails.application.configure do
   # Assets
   config.assets.compile = false
   config.assets.quiet   = true
+  config.active_storage.service = :cloudinary
+
 
   # I18n fallback
   config.i18n.fallbacks = true
