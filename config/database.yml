@@ -24,3 +24,18 @@ production:
   username: <%= ENV.fetch("DB_USER_PRODUCTION", "g_portfolio") %>
   password: <%= ENV["G_PORTFOLIO_DATABASE_PASSWORD"] %>
   # Si tu utilises Render ou un autre service cloud, n'oublie pas d'utiliser les variables DB_HOST et DB_PORT
+
+
+# default: &default
+#   adapter: null
+#   pool: 5
+#   timeout: 5000
+
+# development:
+#   <<: *default
+
+# test:
+#   <<: *default
+
+# production:
+#   <<: *default

@@ -9,10 +9,10 @@ require "active_job/railtie"
 require "action_cable/engine"
 require "active_model/railtie"
 require "sprockets/railtie"
-# require "active_record/railtie" # pas de DB
-require "active_storage/engine" # pas de fichiers à gérer
-# require "rails/test_unit/railtie" # pas de TestUnit
+require "active_storage/engine"
 
+# Ne pas charger ActiveRecord
+# require "active_record/railtie"
 
 # Charger les gems du Gemfile
 Bundler.require(*Rails.groups)
