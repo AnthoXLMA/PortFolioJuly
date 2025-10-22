@@ -4,6 +4,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
   host: <%= ENV.fetch("DB_HOST", "localhost") %>
   port: <%= ENV.fetch("DB_PORT", 5432) %>
+  # Utiliser DATABASE_URL si disponible (Render fournit cette variable)
+  url: <%= ENV["DATABASE_URL"] %>
 
 development:
   <<: *default
@@ -19,9 +21,9 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("DB_NAME_PRODUCTION") %>
-  username: <%= ENV.fetch("DB_USER_PRODUCTION") %>
-  password: <%= ENV.fetch("G_PORTFOLIO_DATABASE_PASSWORD") %>
-  host: <%= ENV.fetch("DB_HOST") %>
+  database: <%= ENV.fetch("DB_NAME_PRODUCTION", "portfolio_db_0bgs") %>
+  username: <%= ENV.fetch("DB_USER_PRODUCTION", "portfolio_db_0bgs_user") %>
+  password: <%= ENV.fetch("G_PORTFOLIO_DATABASE_PASSWORD", "aWEBj1yjnGRllmzJl8SKdatOOQLxksij") %>
+  host: <%= ENV.fetch("DB_HOST", "dpg-d3s9qhc9c44c73ckfmog-a.frankfurt-postgres.render.com") %>
   port: <%= ENV.fetch("DB_PORT", 5432) %>
   sslmode: require
