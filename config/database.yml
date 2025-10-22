@@ -20,9 +20,13 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("DB_NAME_PRODUCTION", "g_portfolio_production") %>
-  username: <%= ENV.fetch("DB_USER_PRODUCTION", "g_portfolio") %>
-  password: <%= ENV["G_PORTFOLIO_DATABASE_PASSWORD"] %>
+  host: <%= ENV.fetch("DB_HOST") %>
+  port: <%= ENV.fetch("DB_PORT", 5432) %>
+  database: <%= ENV.fetch("DB_NAME_PRODUCTION") %>
+  username: <%= ENV.fetch("DB_USER_PRODUCTION") %>
+  password: <%= ENV.fetch("G_PORTFOLIO_DATABASE_PASSWORD") %>
+  sslmode: require
+
   # Si tu utilises Render ou un autre service cloud, n'oublie pas d'utiliser les variables DB_HOST et DB_PORT
 
 
