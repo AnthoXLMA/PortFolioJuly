@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AntMan Photography</title>
+  <title>AM Portfolio Photography</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -25,15 +25,15 @@
       <div class="navbar-container">
         <!-- Logo -->
         <div class="navbar-logo logo">
-          <h1>Gimix<span class="man-highlight">Collections</span></h1>
-          <h2>par Anthony M.</h2>
+          <h1>Ant<span class="man-highlight">M.</span></h1>
+          <h2>Portfolio</h2>
         </div>
         <!-- Menu -->
         <div class="navbar-links">
-          <%= link_to "Prologue", root_path, class: "nav-link" %>
+          <%= link_to "Accueil", root_path, class: "nav-link" %>
           <%= link_to "Collections", collections_path, class: "nav-link" %>
-          <%= link_to "Fragments", fragments_path, class: "nav-link" %>
-          <%= link_to "Backstage", a_propos_path, class: "nav-link" %>
+          <%= link_to "Vignettes", fragments_path, class: "nav-link" %>
+          <%= link_to "A propos", a_propos_path, class: "nav-link" %>
           <%= link_to "Contact", contact_path, class: "nav-link" %>
         </div>
       </div>
@@ -43,7 +43,7 @@
 
   <footer class="site-footer">
   <div class="container">
-    <p>Anthony Mania Gimix Collections</p>
+    <p>AM - Gimix Collections</p>
     <p>&copy; 2025 Tous droits réservés.</p>
     <nav>
       <%= link_to "Contact", contact_path %> |

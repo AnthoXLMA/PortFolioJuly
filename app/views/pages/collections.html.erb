@@ -1,16 +1,23 @@
 <section class="photo-row-container">
-  <div class="photo-row-title">Collections</div>
+  <header class="photo-row-header">
+    <h2 class="photo-row-title">Collections</h2>
+  </header>
 
-  <div class="photo-row">
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752672208/Brittany/IMG_8867_-_Grande_esfl2c.jpg", class: "photo-item"), "/brittany" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754507830/NewYork/IMG_4369_-_Grande_wm3ioq.jpg", class: "photo-item"), "/new_york" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg", class: "photo-item"), "/brittany" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754553768/NewYork/_MG_1957_-_Grande_m55stb.jpg", class: "photo-item"), "/new_york" %>
-    <%= link_to image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754554095/NewYork/IMG_8434_-_Moyenne_ocb3iu.jpg", class: "photo-item"), "/new_york" %>
+  <div class="photo-row-horizontal">
+    <% collections = [
+      { url: "https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752672208/Brittany/IMG_8867_-_Grande_esfl2c.jpg", path: "/brittany" },
+      { url: "https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1754507830/NewYork/IMG_4369_-_Grande_wm3ioq.jpg", path: "/new_york" },
+      { url: "https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752423661/Brittany/IMG_8190_-_Grande_sb7nvh.jpg", path: "/brittany" },
+      { url: "https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1754553768/NewYork/_MG_1957_-_Grande_m55stb.jpg", path: "/new_york" },
+      { url: "https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1754554095/NewYork/IMG_8434_-_Moyenne_ocb3iu.jpg", path: "/new_york" }
+    ] %>
+
+    <% collections.each do |photo| %>
+      <%= link_to image_tag(photo[:url], class: "photo-item-horizontal", alt: "Collection photo"), photo[:path] %>
+    <% end %>
   </div>
 
-  <!-- Nouveau menu en overlay -->
-  <nav class="photo-row-menu">
+  <nav class="photo-row-menu" aria-label="Collection categories">
     <ul>
       <li><%= link_to "Silent Horizons", "/silenthorizons" %></li>
       <li><%= link_to "Willow & Stone", "/willow_and_stone" %></li>
@@ -20,76 +27,61 @@
   </nav>
 </section>
 
-<!-- <div class="swiper mySwiper-3D">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754554504/NewYork/_MG_2109_-_Grande_ozqspd.jpg", class: "photo-item-1") %>
-</div>
-    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1") %>
-</div>
-    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754555117/NewYork/IMG_3635_-_Grande_2_mmuikd.jpg", class: "photo-item-1") %></div>
-    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1") %>
-</div>
-    <div class="swiper-slide"><%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752513308/Paris/IMG_0491_kzin7n.jpg", class: "photo-item-1") %>
-</div>
-  </div>
-</div> -->
-
-
+<!-- ===== SECTION 2 - LIFESTYLES / INDOORS ===== -->
 <div class="container-2-3-wrapper">
   <section class="container-2">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754776391/Sportts/IMG_0335_-_Grande_rb8mc9.jpg", class: "photo-item-1") %>
-    <div class="image-caption">Stadium</div>
-    <div class="image-caption"><%= link_to "More 'Lifestyles' Pictures ", "/lifestyles" %></div>
+    <figure>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1754776391/Sportts/IMG_0335_-_Grande_rb8mc9.jpg", class: "photo-item-1", alt: "Stadium photo") %>
+      <figcaption class="image-caption">Stadium</figcaption>
+      <div class="image-caption"><%= link_to "More 'Lifestyles' Pictures", "/lifestyles" %></div>
+    </figure>
   </section>
 
   <section class="container-3">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1") %>
-    <div class="image-caption">Courchevel</div>
-    <div class="image-caption"><%= link_to "More 'Indoors' Pictures", "/interiors" %></div>
+    <figure>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1", alt: "Courchevel snow scene") %>
+      <figcaption class="image-caption">Courchevel</figcaption>
+      <div class="image-caption"><%= link_to "More 'Indoors' Pictures", "/interiors" %></div>
+    </figure>
   </section>
 </div>
 
+<!-- ===== SECTION 3 - COMMERCIALS / SPIRITUALS ===== -->
 <div class="container-2-3-wrapper">
   <section class="container-2">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg", class: "photo-item-1") %>
-    <div class="image-caption">Rivoli</div>
-    <div class="image-caption"><%= link_to "More 'Commercials' Pictures ", "/commercials" %></div>
+    <figure>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg", class: "photo-item-1", alt: "Rivoli streetscape") %>
+      <figcaption class="image-caption">Rivoli</figcaption>
+      <div class="image-caption"><%= link_to "More 'Commercials' Pictures", "/commercials" %></div>
+    </figure>
   </section>
 
   <section class="container-3">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1") %>
-    <div class="image-caption">Madrugada</div>
-    <div class="image-caption"><%= link_to "More 'Spirituals' Pictures", "/spirituals" %></div>
+    <figure>
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1", alt: "Madrugada ambiance") %>
+      <figcaption class="image-caption">Madrugada</figcaption>
+      <div class="image-caption"><%= link_to "More 'Spirituals' Pictures", "/spirituals" %></div>
+    </figure>
   </section>
 </div>
-
-<!-- <section class="container-1" style="padding:10px">
-  <div class="gallery-grid">
-    <%= link_to "/new_york", class: "gallery-thumb" do %>
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1752423688/NewYork/_MG_2110_-_Grande_rwakpv.jpg", alt: "Titre de l’image") %>
-    <% end %>
-  </div>
-</section> -->
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".mySwiper-3D", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      loop: true,
-      coverflowEffect: {
-        rotate: 40,
-        stretch: 0,
-        depth: 200,
-        modifier: 1,
-        slideShadows: true,
-      },
+  // Apparition fluide au scroll
+  document.addEventListener("scroll", () => {
+    document.querySelectorAll(".photo-item-horizontal, .photo-item-1").forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
     });
   });
-</script>
 
+  // Scroll horizontal fluide avec la molette
+  const scroller = document.querySelector(".photo-row-horizontal");
+  scroller.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scroller.scrollLeft += evt.deltaY;
+  });
+</script>
 
 <style>
   body {
@@ -100,256 +92,177 @@
     background-color: white;
   }
 
-  h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-    padding: 10px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .gallery-thumb {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .gallery-thumb:hover {
-    transform: scale(1.03);
-  }
-
+  /* SECTION HORIZONTALE */
   .photo-row-container {
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 70px;
+    height: 500px;
+    margin-bottom: 80px;
   }
 
-  /* Menu en bas à gauche sur le bloc */
-  .photo-row-menu {
-    position: absolute;
-    bottom: 10px;   /* 10px du bas */
-    left: 10px;     /* 10px de la gauche */
-  /*  background-color: rgba(0, 0, 0, 0.6);*/
-    padding: 10px 15px;
-    border-radius: 6px;
-    z-index: 20;  /* au-dessus des images */
-  }
-
-  .photo-row-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-  }
-
-  .photo-row-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    /*font-weight: 600;*/
-    font-size: 0.8rem;
-    transition: color 0.3s ease;
-  }
-
-  .photo-row-menu ul li a:hover {
-    /*color: #9B496B;*/
-    /*color: #8e2a50;*/
-   /* color: #FF00FF;*/
-    color:#A1866F;
-  }
-
-  .photo-row-title {
+  .photo-row-header {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    color: white;
-/*    background-color: rgba(0, 0, 0, 0.5);*/
-    padding: 0.2em 0.6em;
-    border-radius: 6px;
     z-index: 10;
+  }
+
+  .photo-row-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
     pointer-events: none;
     user-select: none;
-    white-space: nowrap;
+    text-align: center;
   }
 
-  .photo-row {
+  .photo-row-horizontal {
     display: flex;
-    justify-content: center;
-/*    gap: 20px;*/
-    position: relative; /* important pour positionner l'overlay */
-  }
-
-  .photo-item {
-    flex-shrink: 0;
-    width: 300px;
-    height: 500px;
-    object-fit: cover;
-    margin-right: 20px; /* Décalage vers la droite */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
     position: relative;
-    z-index: 1;
-    cursor: pointer;
+    scroll-snap-type: x mandatory;
   }
 
-  /* Voile noir semi-transparent au-dessus des images */
-  .photo-row::before {
+  .photo-row-horizontal::-webkit-scrollbar {
+    display: none; /* scrollbar masquée */
+  }
+
+  .photo-item-horizontal {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    z-index: 1;
+  }
+
+  .photo-item-horizontal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .photo-item-horizontal:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  /* GRADIENT SUPERPOSÉ */
+  .photo-row-container::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.1));
     z-index: 2;
+    pointer-events: none;
   }
 
-/*  .photo-item:hover {
-    transform: scale(1.05);
-    z-index: 5;
-  }*/
+  /* MENU OVERLAY */
+  .photo-row-menu {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    z-index: 20;
+  }
 
+  .photo-row-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .photo-row-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.15);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .photo-row-menu a:hover {
+    background-color: rgba(255,255,255,0.35);
+    color: #A1866F;
+  }
+
+  /* AUTRES BLOCS */
   .container-2-3-wrapper {
     display: flex;
     justify-content: space-between;
-    margin: 20px 40px 50px;
-    gap: 20px;
     flex-wrap: wrap;
+    margin: 40px auto;
+    gap: 20px;
+    max-width: 1100px;
+    padding: 0 20px;
   }
 
-  .container-2,
-  .container-3 {
+  .container-2, .container-3 {
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    flex: 1 1 500px;
-  }
-
-  .container-2 {
-    align-items: flex-start;
-  }
-
-  .container-3 {
-    align-items: flex-end;
+    align-items: center;
   }
 
   .photo-item-1 {
     width: 100%;
     height: auto;
-    max-width: 500px;
     aspect-ratio: 5 / 4;
     object-fit: cover;
-/*    border: 8px solid white; /* effet cadre blanc */
-    box-shadow: 0 5px 15px rgba(0.5, 0.5, 0.5, 0.5), 0 0 0 1px rgba(0,0,0,0.05); /* effet carte postale */
-    /*border-radius: 4px;*/
-    transition: transform 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .photo-item-1.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .photo-item-1:hover {
+    transform: scale(1.02);
   }
 
   .image-caption {
     margin-top: 10px;
     font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #666;
-    user-select: none;
-    max-width: 100%;
     text-align: center;
   }
 
-  .swiper.mySwiper-3D {
-  width: 100%;
-  max-width: 1000px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin: auto;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 500px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-
-/*
-  @media (max-width: 900px) {
-    .photo-item-1 {
-      width: 90%;
-      height: auto;
-      aspect-ratio: 5/4;
-      max-width: none;
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .photo-row-container {
+      height: 300px;
     }
 
-    .image-caption {
-      width: 90%;
-      font-size: 1.2rem;
+    .photo-item-horizontal {
+      width: 250px;
     }
 
-    .photo-row {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .photo-item {
-      width: 45%;
-      height: auto;
-      aspect-ratio: 2 / 5;
-      animation: none;  désactive animation si tu en avais avant
+    .photo-row-menu ul {
+      flex-direction: column;
+      gap: 6px;
     }
 
     .photo-row-title {
-      font-size: 3rem;
-      top: 10%;
-      padding: 0.2em 0.4em;
+      font-size: 2.5rem;
     }
-
-    .container-2-3-wrapper {
-      margin: 20px 10px 50px;
-    }
-
-    .container-2, .container-3 {
-      max-width: 100%;
-      flex: none;
-      align-items: center !important;
-    }
-
-    .image-caption {
-      width: 90% !important;
-      text-align: center !important;
-    }
-  }*/
+  }
 </style>
