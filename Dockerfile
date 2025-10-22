@@ -1,64 +1,87 @@
 # syntax=docker/dockerfile:1
-ARG RUBY_VERSION=3.1.2
-FROM ruby:$RUBY_VERSION-slim as base
 
+# ========================
+# Base image Ruby
+# ========================
+ARG RUBY_VERSION=3.1.2
+FROM ruby:$RUBY_VERSION-slim AS base
+
+# Set workdir
 WORKDIR /rails
 
+# Set production environment
 ENV RAILS_ENV=production \
     BUNDLE_DEPLOYMENT=1 \
     BUNDLE_PATH=/usr/local/bundle \
-    BUNDLE_WITHOUT=development:test
+    BUNDLE_WITHOUT="development:test"
 
-# ----------------------
+# ========================
 # Build stage
-# ----------------------
-FROM base as build
+# ========================
+FROM base AS build
 
-# Install build dependencies
+# Install dependencies for gems & Node.js
 RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-    build-essential curl git libpq-dev libvips nodejs npm pkg-config python-is-python3
+    apt-get install --no-install-recommends -y \
+        build-essential curl git libpq-dev libvips pkg-config python-is-python3 && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy Gemfiles and install gems
+# Install Node.js >=22 and Yarn
+ARG NODE_VERSION=22
+ARG YARN_VERSION=1.22.22
+RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g yarn@$YARN_VERSION
+
+# ========================
+# Install gems
+# ========================
 COPY Gemfile Gemfile.lock ./
-RUN bundle install && \
+RUN bundle install --jobs 4 && \
     bundle exec bootsnap precompile --gemfile
 
-# Copy JS dependencies and install
+# ========================
+# Install JS dependencies
+# ========================
 COPY package.json yarn.lock ./
-RUN npm install -g yarn && yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile
 
-# Copy the app code
+# ========================
+# Copy app code
+# ========================
 COPY . .
 
 # Precompile bootsnap for faster boot
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompile assets without DB
-ENV DATABASE_URL=postgres://dummy:dummy@localhost/dummy
-RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
-ENV DATABASE_URL=
+# Precompile Rails assets (without RAILS_MASTER_KEY)
+RUN SECRET_KEY_BASE_DUMMY=1 bin/rails assets:precompile
 
-# ----------------------
-# Final runtime stage
-# ----------------------
+# ========================
+# Final runtime image
+# ========================
 FROM base
 
+# Install runtime dependencies
 RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends curl libvips postgresql-client && \
-    rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+    apt-get install --no-install-recommends -y \
+        curl libvips postgresql-client && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives
 
-# Copy gems and app from build
+# Copy gems and app from build stage
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-# Non-root user
+# Create non-root user
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
-USER rails:rails
 
-# Entrypoint
+USER rails:rails
+WORKDIR /rails
+
+# Entrypoint prepares database
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
+# Expose default Rails port
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
