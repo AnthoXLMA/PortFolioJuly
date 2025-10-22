@@ -19,17 +19,9 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("DB_NAME_PRODUCTION", "dummy_production") %>
-  username: <%= ENV.fetch("DB_USER_PRODUCTION", "dummy_user") %>
-  password: <%= ENV.fetch("G_PORTFOLIO_DATABASE_PASSWORD", "dummy_password") %>
-  host: <%= ENV.fetch("DB_HOST", "localhost") %>
+  database: <%= ENV.fetch("DB_NAME_PRODUCTION") %>
+  username: <%= ENV.fetch("DB_USER_PRODUCTION") %>
+  password: <%= ENV.fetch("G_PORTFOLIO_DATABASE_PASSWORD") %>
+  host: <%= ENV.fetch("DB_HOST") %>
   port: <%= ENV.fetch("DB_PORT", 5432) %>
   sslmode: require
-
-# Astuce pour éviter l'échec de la précompilation des assets
-<% if Rails.env.production? && !ENV['DB_HOST'] %>
-<% ENV['DB_HOST'] = 'localhost' %>
-<% ENV['DB_NAME_PRODUCTION'] = 'dummy' %>
-<% ENV['DB_USER_PRODUCTION'] = 'dummy' %>
-<% ENV['G_PORTFOLIO_DATABASE_PASSWORD'] = 'dummy' %>
-<% end %>
