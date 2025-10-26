@@ -1,19 +1,29 @@
 <section class="resume">
-  <div class="slideshow-container">
-    <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/v1754557409/NewYork/IMG_3911_-_Grande_ljrvjd.jpg", alt: "Titre de l’image") %>
-    <div class="intrigue-overlay">
-      <div class="overlay-content">
-        <h1>
-          <span>Bienvenue</span>
-        </h1>
-        <%= link_to "Entrée", collections_path, class: "btn btn-large" %>
+  <div class="slideshow-container relative w-full h-[90vh] overflow-hidden">
+    <% images = [
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754573100/Brittany/IMG_9644_-_Grande_pmv1cs.jpg",
+      "https://res.cloudinary.com/dqaturjpm/image/upload/v1754557549/NewYork/IMG_4572_-_Grande_rlhq4a.jpg"
+    ] %>
+
+    <!-- Background fallback pour éviter le noir -->
+    <div class="slideshow-background absolute inset-0 bg-gray-900"></div>
+
+    <% images.each_with_index do |img, index| %>
+      <div class="mySlides absolute inset-0 transition-opacity duration-1000 ease-in-out <%= index.zero? ? 'active' : '' %>">
+        <%= image_tag(img, alt: "Photo #{index + 1}", class: "w-full h-full object-cover") %>
       </div>
-    </div>
+    <% end %>
+
+    <!-- Navigation -->
+    <a class="prev absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold cursor-pointer" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold cursor-pointer" onclick="plusSlides(1)">&#10095;</a>
   </div>
 </section>
+
 <section class="gallery-section">
   <div style="margin-bottom: 20px;">
-<h1><%= link_to "Découvrez toutes les photos", fragments_path %></h1>
+    <h1><%= link_to "Découvrez toutes les photos", fragments_path %></h1>
   </div>
   <div class="grid-gallery">
     <% [
@@ -30,24 +40,36 @@
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".slide");
-    let current = 0;
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("mySlides");
+  let slideInterval;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-      });
-      slides[index].classList.add("active");
-    }
+  function showSlides(n) {
+    for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
+    slides[n].classList.add("active");
+  }
 
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }
+  function plusSlides(n) {
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    showSlides(slideIndex);
+    resetInterval();
+  }
 
-    showSlide(current);
-    setInterval(nextSlide, 4000);
+  function startSlides() {
+    slideInterval = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlides(slideIndex);
+    }, 4000);
+  }
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    startSlides();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides(slideIndex);
+    startSlides();
   });
 </script>
 
@@ -60,96 +82,51 @@
   }
 
   .resume {
-    padding: 40px;
+    padding: 0;
     width: 100%;
     height: auto;
     background-color: black;
-    color: black;
+  }
+
+  .slideshow-background {
+    z-index: 0;
+    background-color: #111;
   }
 
   .slideshow-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
   }
 
-  .slide {
+  .mySlides {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    inset: 0;
     opacity: 0;
+    z-index: 1;
     transition: opacity 1.5s ease-in-out;
   }
 
-  .slide.active {
+  .mySlides.active {
     opacity: 1;
-    z-index: 1;
-  }
-
-  .intrigue-slide {
-    filter: brightness(1.1) contrast(1.1) saturate(0.7);
-    transform: scale(1.05);
-    transition: transform 10s ease-in-out;
+    z-index: 2;
   }
 
   .intrigue-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+    inset: 0;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
-    text-align: center;
-  }
-
-  .overlay-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    pointer-events: auto;
-  }
-
-  .intrigue-overlay h1 {
-    margin: 0;
-    padding: 0 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: white;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 3s ease-in-out both;
-  }
-
-  .intrigue-overlay h1 span {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 300;
-    font-style: italic;
-    margin-top: 0.5rem;
-    white-space: nowrap;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
   }
 
   .gallery-section {
     padding: 40px;
     background: white;
     text-align: center;
-  }
-
-  .gallery-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
   }
 
   .grid-gallery {
@@ -160,55 +137,24 @@
     margin: 0 auto;
   }
 
-
   .grid-gallery img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    width: 100%;
-    height: auto;
   }
 
   .grid-gallery img:hover {
     transform: scale(1.03);
   }
 
-  .btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-/*    font-weight: 600;*/
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: inline-block;
-    border: 2px solid white;
-    color: white;
-    background-color: black;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  .prev, .next {
+    z-index: 4;
+    user-select: none;
+    transition: opacity 0.3s;
   }
 
-  .btn:hover,
-  .btn:focus {
-    background-color: white;
-    color: #8e2a50;
-    outline: none;
-    box-shadow: 0 0 12px #8e2a50;
-  }
-
-  .btn-large {
-    padding: 16px 40px;
-    font-size: 1.2rem;
-    border-radius: 8px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+  .prev:hover, .next:hover {
+    opacity: 0.7;
   }
 </style>
