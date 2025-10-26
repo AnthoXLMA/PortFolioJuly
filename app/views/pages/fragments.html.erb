@@ -1,5 +1,8 @@
+
+
+
 <header class="page-header">
-  <h1>Random</h1>
+  <h1>Vignettes</h1>
 </header>
 
 <section class="gallery-section">
@@ -437,11 +440,12 @@ document.addEventListener("DOMContentLoaded", () => {
     border-radius: 8px;
   }
 
+/* Header optimisé pour utiliser Inter (police moderne sans-serif) */
 .page-header {
   padding: 40px 20px 20px;
   text-align: center;
   color: #fff;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', sans-serif;       /* <-- changement ici */
   position: relative;
   background-image: url("https://res.cloudinary.com/dqaturjpm/image/upload/v1754557880/NewYork/IMG_6370_-_Grande_jntcna.jpg");
   background-size: cover;
@@ -450,6 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
   box-shadow: inset 0 -60px 60px -20px rgba(0,0,0,0.7); /* overlay sombre en bas */
 }
 
+/* overlay */
 .page-header::before {
   content: "";
   position: absolute;
@@ -458,20 +463,26 @@ document.addEventListener("DOMContentLoaded", () => {
   z-index: 0;
 }
 
+/* titre : utilise également Inter, poids un peu plus fort pour contraste */
 .page-header h1 {
   margin: 0;
   font-size: 3rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   line-height: 1.1;
   position: relative;
   z-index: 1; /* pour être au-dessus de l'overlay */
+  font-family: 'Inter', sans-serif;   /* cohérence visuelle */
+  font-weight: 600;
+  color: #ffffff;
 }
 
+/* mobile */
 @media (max-width: 600px) {
   .page-header h1 {
     font-size: 2rem;
   }
 }
+
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }

@@ -1,3 +1,8 @@
+<head>
+  <!-- Import de la police moderne -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
 <section class="photo-row-container">
   <header class="photo-row-header">
     <h2 class="photo-row-title">Collections</h2>
@@ -27,43 +32,62 @@
   </nav>
 </section>
 
-<!-- ===== SECTION 2 - LIFESTYLES / INDOORS ===== -->
-<div class="container-2-3-wrapper">
-  <section class="container-2">
-    <figure>
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1754776391/Sportts/IMG_0335_-_Grande_rb8mc9.jpg", class: "photo-item-1", alt: "Stadium photo") %>
-      <figcaption class="image-caption">Stadium</figcaption>
-      <div class="image-caption"><%= link_to "More 'Lifestyles' Pictures", "/lifestyles" %></div>
-    </figure>
-  </section>
+<!-- ===== GALERIE ARTISTIQUE : LIFESTYLES & OUTDOORS ===== -->
+<section class="art-gallery">
+  <header class="gallery-header">
+    <h2>Lifestyles & Outdoors</h2>
+    <p>Fragments du mouvement, de la respiration et de la lumière.</p>
+  </header>
 
-  <section class="container-3">
-    <figure>
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "photo-item-1", alt: "Courchevel snow scene") %>
-      <figcaption class="image-caption">La Rosière</figcaption>
-      <div class="image-caption"><%= link_to "More 'Indoors' Pictures", "/interiors" %></div>
+  <div class="gallery-pair">
+    <figure class="gallery-item">
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_1000/v1754776391/Sportts/IMG_0335_-_Grande_rb8mc9.jpg", class: "gallery-photo", alt: "Stadium photo") %>
+      <figcaption>
+        <h3>Stadium</h3>
+        <p>De la tension sportive à la géométrie des gradins.</p>
+        <%= link_to "Explorer la série →", "/lifestyles", class: "gallery-link" %>
+      </figcaption>
     </figure>
-  </section>
-</div>
 
-<!-- ===== SECTION 3 - COMMERCIALS / SPIRITUALS ===== -->
-<div class="container-2-3-wrapper">
-  <section class="container-2">
-    <figure>
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg", class: "photo-item-1", alt: "Rivoli streetscape") %>
-      <figcaption class="image-caption">Rivoli</figcaption>
-      <div class="image-caption"><%= link_to "More 'Commercials' Pictures", "/commercials" %></div>
+    <figure class="gallery-item">
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_1000/v1752512083/Snow/IMG_4570_sdl3lk.jpg", class: "gallery-photo", alt: "Courchevel snow scene") %>
+      <figcaption>
+        <h3>La Rosière</h3>
+        <p>La blancheur devient matière, silence et ligne d’horizon.</p>
+        <%= link_to "Explorer la série →", "/interiors", class: "gallery-link" %>
+      </figcaption>
     </figure>
-  </section>
+  </div>
+</section>
 
-  <section class="container-3">
-    <figure>
-      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_800/v1752511599/IMG_5246_l0vdc4.jpg", class: "photo-item-1", alt: "Madrugada ambiance") %>
-      <figcaption class="image-caption">Madrugada</figcaption>
-      <div class="image-caption"><%= link_to "More 'Paysages' Pictures", "/spirituals" %></div>
+<!-- ===== GALERIE ARTISTIQUE : URBAINES & PAYSAGES ===== -->
+<section class="art-gallery">
+  <header class="gallery-header">
+    <h2>Urban & Spiritual Landscapes</h2>
+    <p>La ville et le souffle du monde, entre pierres et lumière.</p>
+  </header>
+
+  <div class="gallery-pair">
+    <figure class="gallery-item">
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_1000/v1752767761/Paris/IMG_5619_-_Grande_ifwk1l.jpg", class: "gallery-photo", alt: "Rivoli streetscape") %>
+      <figcaption>
+        <h3>Rivoli</h3>
+        <p>Une traversée de la pierre, de la mode et du passage.</p>
+        <%= link_to "Voir la collection →", "/commercials", class: "gallery-link" %>
+      </figcaption>
     </figure>
-  </section>
-</div>
+
+    <figure class="gallery-item">
+      <%= image_tag("https://res.cloudinary.com/dqaturjpm/image/upload/f_auto,q_auto,w_1000/v1752511599/IMG_5246_l0vdc4.jpg", class: "gallery-photo", alt: "Madrugada ambiance") %>
+      <figcaption>
+        <h3>Madrugada</h3>
+        <p>L’heure bleue où les contours se dissolvent dans l’ombre.</p>
+        <%= link_to "Voir la série →", "/spirituals", class: "gallery-link" %>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 
 <script>
   // Apparition fluide au scroll
@@ -97,8 +121,8 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 500px;
-    margin-bottom: 80px;
+/*    height: 400px;
+*/    margin-bottom: 80px;
   }
 
   .photo-row-header {
@@ -110,14 +134,14 @@
   }
 
   .photo-row-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: clamp(2.5rem, 6vw, 5rem);
     color: white;
-    font-weight: 400;
     letter-spacing: 1px;
+    text-align: center;
     pointer-events: none;
     user-select: none;
-    text-align: center;
   }
 
   .photo-row-horizontal {
@@ -126,14 +150,14 @@
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    height: 100%;
+    height: 90%;
     width: 100%;
     position: relative;
     scroll-snap-type: x mandatory;
   }
 
   .photo-row-horizontal::-webkit-scrollbar {
-    display: none; /* scrollbar masquée */
+    display: none;
   }
 
   .photo-item-horizontal {
@@ -158,7 +182,6 @@
     filter: brightness(1.1);
   }
 
-  /* GRADIENT SUPERPOSÉ */
   .photo-row-container::before {
     content: "";
     position: absolute;
@@ -185,6 +208,8 @@
   }
 
   .photo-row-menu a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
@@ -240,11 +265,118 @@
 
   .image-caption {
     margin-top: 10px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
     color: #666;
     text-align: center;
   }
+
+
+
+/* ====== SECTION ART GALLERY ====== */
+.art-gallery {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.gallery-header p {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.gallery-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  background: #fff;
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.gallery-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.gallery-item:hover .gallery-photo {
+  transform: scale(1.05);
+}
+
+figcaption {
+  padding: 20px 25px 25px;
+  text-align: left;
+}
+
+figcaption h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+figcaption p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.gallery-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #111;
+  border-bottom: 1px solid #111;
+  letter-spacing: 0.05em;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.gallery-link:hover {
+  color: #a1866f;
+  border-color: #a1866f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-header h2 { font-size: 2rem; }
+  .gallery-pair { gap: 25px; }
+  figcaption { padding: 15px; }
+}
+
+
+
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
